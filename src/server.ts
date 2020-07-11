@@ -34,6 +34,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 
 dotenv.config();
 
-app.listen(3333, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log('🚀 server started in port 3333');
 });
