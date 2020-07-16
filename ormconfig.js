@@ -1,14 +1,13 @@
-console.log('DATABASE_URL >>', process.env.DATABASE_URL);
 module.exports = {
   "type":"postgres",
   "url":process.env.DATABASE_URL,
   "entities":[
-    "dist/models/*.js"
+    "./src/modules/**/infra/typeorm/entities/*.ts"
   ],
   "migrations":[
-    "dist/database/migrations/*.js"
+    "./src/shared/infra/typeorm/migrations/*.ts"
   ],
   "cli":{
-    "migrationsDir":"./src/database/migrations"
+    "migrationsDir":"./src/shared/infra/typeorm/migrations"
   }
 }
